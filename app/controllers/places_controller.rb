@@ -15,22 +15,22 @@ class PlacesController < ApplicationController
     
     def create
         @place = Place.new(params["place"])
-        @company.save
+        @place.save
         redirect_to "/places"
     end
     
     def edit
-        @company = Place.find(params["id"])
+        @place = Place.find(params["id"])
     end
     
     def update
-        @place = Company.find(params["id"])
+        @place = Place.find(params["id"])
         @place.update(params["place"])
         redirect_to "/places"
     end
     
     def destroy
-        @place = Company.find(params["id"])
+        @place = Place.find(params["id"])
         @place.destroy
         redirect_to "/places"
     end
